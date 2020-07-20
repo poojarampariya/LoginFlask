@@ -3,7 +3,8 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 
 app = Flask(__name__)
-
+app.secret_key = os.urandom(12)
+  
 @app.route('/')
 def home():
   if not session.get('logged_in'):
@@ -19,6 +20,5 @@ def do_admin_login():
     flash('wrong password!')
   return home()
 
-if __name__ == "__main__":
-   app.secret_key = os.urandom(12)
+if __name__ == "__main__":  
    app.run(host='127.0.0.1', port=8080, debug=True)
