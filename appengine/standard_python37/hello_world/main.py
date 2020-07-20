@@ -10,8 +10,7 @@ app = Flask(__name__)
 def hello():
     """Return a friendly HTTP greeting."""
     name = request.args.get('name','World')
-    return 'Hello' + name + '!'
-
+    return emojize(f'Hello {name}!')
 
 if __name__ == '__main__':
    
