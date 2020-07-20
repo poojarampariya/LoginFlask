@@ -3,7 +3,7 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(12)
+app.secret_key = 'secret'
   
 @app.route('/')
 def home():
