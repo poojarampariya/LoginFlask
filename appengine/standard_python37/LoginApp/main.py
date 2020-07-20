@@ -1,5 +1,5 @@
 from flask import Flask,request,render_template
-import pickle
+import pickle5 as pickle
 
 app = Flask(__name__)
 
