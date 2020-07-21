@@ -4,7 +4,8 @@ import os
 from datetime import timedelta
 
 # decorator for routes that should be accessible only by logged in users
-from django.contrib.auth.decorators import login_required
+from auth_decorator import login_required
+
 
 # dotenv setup
 from dotenv import load_dotenv
