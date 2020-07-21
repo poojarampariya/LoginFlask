@@ -22,5 +22,4 @@ def login():
 	         return render_template('home.html',name=name1)
 
 if __name__ == '__main__':
-    app.run()
-© 2020 GitHub, Inc.
+    app.run(host='127.0.0.1', port=8080, debug=True)
