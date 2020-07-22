@@ -16,7 +16,7 @@ import logging
 
 from flask import Flask, jsonify, request
 import flask_cors
-from google.appengine.ext import ndb
+from google.cloud import ndb
 import google.auth.transport.requests
 import google.oauth2.id_token
 import requests_toolbelt.adapters.appengine
