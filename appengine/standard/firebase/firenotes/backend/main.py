@@ -19,11 +19,11 @@ import flask_cors
 from google.cloud import ndb
 import google.auth.transport.requests
 import google.oauth2.id_token
-import requests_toolbelt.adapters.appengine
+#import requests_toolbelt.adapters.appengine
 
 # Use the App Engine Requests adapter. This makes sure that Requests uses
 # URLFetch.
-requests_toolbelt.adapters.appengine.monkeypatch()
+#requests_toolbelt.adapters.appengine.monkeypatch()
 HTTP_REQUEST = google.auth.transport.requests.Request()
 
 app = Flask(__name__)
@@ -124,5 +124,5 @@ def server_error(e):
     logging.exception('An error occurred during a request.')
     return 'An internal error occurred.', 500
 
-if __name__ == '__main__':
-	app.run(host='127.0.0.1', port=8080, debug=True)
+#if __name__ == '__main__':
+#	app.run(host='127.0.0.1', port=8080, debug=True)
