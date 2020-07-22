@@ -14,5 +14,5 @@
 
 from google.appengine.ext import vendor
 import os
-vendor.add('lib')
+vendor.add('backend/lib')
 
