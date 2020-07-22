@@ -1,5 +1,5 @@
 runtime: python37
-api_version: 1
+
 service: backend
 
 handlers:
@@ -10,10 +10,5 @@ env_variables:
   GAE_USE_SOCKETS_HTTPLIB : 'true'
   PROJECT_ID : 'fir-project-f8aa4'
   
-skip_files:
-- ^(.*/)?#.*#$
-- ^(.*/)?.*\.py[co]$
-- ^(.*/)?\..*$
-- ^(.*/)?node_modules$
-- ^venv$
+
 
