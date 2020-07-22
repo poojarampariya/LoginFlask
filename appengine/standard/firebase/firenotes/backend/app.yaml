@@ -4,7 +4,7 @@ service: backend
 
 handlers:
 - url: /.*
-  script: main.app
+  script: auto
 
 env_variables:
   GAE_USE_SOCKETS_HTTPLIB : 'true'
