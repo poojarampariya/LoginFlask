@@ -10,6 +10,33 @@
   <title>Firenotes</title>
 </head>
 <body>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+ 
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDsRWUKzPSNBDWWScXH0nL0n3Sn_CD20xc",
+    authDomain: "fir-project-f8aa4.firebaseapp.com",
+    databaseURL: "https://fir-project-f8aa4.firebaseio.com",
+    projectId: "fir-project-f8aa4",
+    storageBucket: "fir-project-f8aa4.appspot.com",
+    messagingSenderId: "582440646450",
+    appId: "1:582440646450:web:6f529e373403e8d165092b",
+    measurementId: "G-TE8BGX11BY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  
   <div id="logged-out">
     <h1>Firenotes</h1>
     <h3>Sign in to access your notebook</h3>
