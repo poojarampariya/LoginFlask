@@ -26,17 +26,21 @@ import google.oauth2.id_token
 #requests_toolbelt.adapters.appengine.monkeypatch()
 firebase_request_adapter = requests.Request()
 
-HTTP_REQUEST = google.auth.transport.requests.Request()
+#HTTP_REQUEST = google.auth.transport.requests.Request()
 
+#datastore_client = datastore.Client()
 app = Flask(__name__)
-flask_cors.CORS(app)
+
+
+
+# flask_cors.CORS(app)
 
 
 class Note(ndb.Model):
-    """NDB model class for a user's note.
+#     """NDB model class for a user's note.
 
-    Key is user id from decrypted token.
-    """
+#     Key is user id from decrypted token.
+#     """
     friendly_id = ndb.StringProperty()
     message = ndb.TextProperty()
     created = ndb.DateTimeProperty(auto_now_add=True)
@@ -44,11 +48,11 @@ class Note(ndb.Model):
 
 # [START gae_python_query_database]
 def query_database(user_id):
-    """Fetches all notes associated with user_id.
+#     """Fetches all notes associated with user_id.
 
-    Notes are ordered them by date created, with most recent note added
-    first.
-    """
+#     Notes are ordered them by date created, with most recent note added
+#     first.
+#     """
     ancestor_key = ndb.Key(Note, user_id)
     query = Note.query(ancestor=ancestor_key).order(-Note.created)
     notes = query.fetch()
@@ -74,7 +78,7 @@ def list_notes():
     # [START gae_python_verify_token]
     id_token = request.headers['Authorization'].split(' ').pop()
     claims = google.oauth2.id_token.verify_firebase_token(
-        id_token, HTTP_REQUEST)
+        id_token, firebase_request_adapter)
     if not claims:
         return 'Unauthorized', 401
     # [END gae_python_verify_token]
@@ -97,7 +101,7 @@ def add_note():
     # Verify Firebase auth.
     id_token = request.headers['Authorization'].split(' ').pop()
     claims = google.oauth2.id_token.verify_firebase_token(
-        id_token, HTTP_REQUEST)
+        id_token, firebase_request_adapter)
     if not claims:
         return 'Unauthorized', 401
 
