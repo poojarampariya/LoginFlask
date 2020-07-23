@@ -17,13 +17,15 @@ import logging
 from flask import Flask, jsonify, request
 import flask_cors
 from google.cloud import ndb
-import google.auth.transport.requests
+from google.auth.transport import requests
 import google.oauth2.id_token
 #import requests_toolbelt.adapters.appengine
 
 # Use the App Engine Requests adapter. This makes sure that Requests uses
 # URLFetch.
 #requests_toolbelt.adapters.appengine.monkeypatch()
+firebase_request_adapter = requests.Request()
+
 HTTP_REQUEST = google.auth.transport.requests.Request()
 
 app = Flask(__name__)
