@@ -19,11 +19,11 @@ import flask_cors
 from google.cloud import ndb
 from google.auth.transport import requests
 import google.oauth2.id_token
-#import requests_toolbelt.adapters.appengine
+import requests_toolbelt.adapters.appengine
 
 # Use the App Engine Requests adapter. This makes sure that Requests uses
 # URLFetch.
-#requests_toolbelt.adapters.appengine.monkeypatch()
+requests_toolbelt.adapters.appengine.monkeypatch()
 firebase_request_adapter = requests.Request()
 
 #HTTP_REQUEST = google.auth.transport.requests.Request()
