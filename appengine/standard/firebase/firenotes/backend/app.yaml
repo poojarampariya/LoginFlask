@@ -10,7 +10,7 @@ env_variables:
   #GAE_USE_SOCKETS_HTTPLIB : 'true'
   PROJECT_ID : 'fir-project-f8aa4'
 
-#entrypoint: gunicorn -b :$PORT main:app
+entrypoint: gunicorn -b :$PORT main:app
   
 
 
